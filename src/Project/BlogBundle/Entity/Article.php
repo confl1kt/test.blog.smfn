@@ -29,13 +29,13 @@ class Article {
 
     /**
      * @var string
-     * @ORM\Column(name="simple_content", type="string", nullable=false)
+     * @ORM\Column(name="simple_content", type="string", length=65535, nullable=false)
      */
     private $simpleContent;
 
     /**
      * @var string
-     * @ORM\Column(name="content", type="string", nullable=false)
+     * @ORM\Column(name="content", type="string", length=4294967295, nullable=false)
      */
     private $content;
 
