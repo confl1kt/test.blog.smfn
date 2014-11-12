@@ -21,7 +21,8 @@ class CategoryAdmin extends Admin{
         $showMapper
             ->add('id', null, array('label' => 'Идентификатор'))
             ->add('parent', null, array('label' => 'Заголовок'))
-            ->add('name', null, array('label' => 'Анонс'));
+            ->add('name', null, array('label' => 'Анонс'))
+            ->add('alias', null, array('label' => 'Алиас'));
     }
 
     protected function configureFormFields(FormMapper $formMapper)
@@ -30,6 +31,7 @@ class CategoryAdmin extends Admin{
             ->with('General')
                 ->add('parent', null, array('label' => 'Заголовок'))
                 ->add('name', null, array('label' => 'Анонс'))
+                ->add('alias', null, array('label' => 'Алиас'))
             ->end();
     }
 
@@ -38,7 +40,8 @@ class CategoryAdmin extends Admin{
         $listMapper
             ->addIdentifier('id')
             ->addIdentifier('parent', null, array('label' => 'Родитель'))
-            ->add('name', null, array('label' => 'Название'));
+            ->add('name', null, array('label' => 'Название'))
+            ->add('alias', null, array('label' => 'Алиас'));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
