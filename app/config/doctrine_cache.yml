@@ -1,0 +1,12 @@
+services:
+    my_memcached_connection_service:
+        class: "Memcached"
+
+doctrine_cache:
+    providers:
+        service_connection_memcached_provider:
+            memcached:
+                servers:
+                    cache:
+                        host: localhost
+                        port: 11211

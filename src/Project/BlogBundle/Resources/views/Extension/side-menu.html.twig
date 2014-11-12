@@ -1,0 +1,10 @@
+<ul class="nav nav-list bs-docs-sidenav">
+    {% for category in categories %}
+        <li>
+            <a href="{{ path('project_blog_list_category', {'category': category.alias}) }}">
+                <i class="icon-chevron-right"></i>
+                {{ category.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

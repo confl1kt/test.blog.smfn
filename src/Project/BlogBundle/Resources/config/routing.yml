@@ -1,0 +1,16 @@
+project_blog_homepage:
+    path:     /
+    defaults: { _controller: ProjectBlogBundle:Article:index }
+project_blog_view:
+    path:     /blog/view/{id}/
+    defaults: { _controller: ProjectBlogBundle:Article:view }
+project_blog_list_category:
+    path:     /blog/{category}/{page}/
+    defaults: { _controller: ProjectBlogBundle:Article:list, category: null, page: 1}
+    requirements:
+      page: \d+
+project_blog_list:
+    path:     /blog/{page}
+    defaults: { _controller: ProjectBlogBundle:Article:list, category: null, page: 1}
+    requirements:
+      page: \d+

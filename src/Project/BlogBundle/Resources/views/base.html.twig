@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='html' class="">
+<head>
+    {{ include('ProjectBlogBundle::head.html.twig', {  }) }}
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-renderer="true">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+        </div>
+    </div>
+</div>
+
+<header class="subhead" id="overview" style="margin-top:40px;">
+    <div class="container">
+        <h1>Blog</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="span3 bs-docs-sidebar">
+            {{ blog_render_side_menu() }}
+        </div>
+
+        <div class="span9">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+
+    </div>
+</footer>
+
+</html>

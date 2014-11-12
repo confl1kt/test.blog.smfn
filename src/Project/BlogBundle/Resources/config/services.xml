@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="project_blog.blog.list" class="Project\BlogBundle\Service\ArticleList">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <argument type="service" id="project_blog.categories"/>
+            <argument type="service" id="knp_paginator"/>
+        </service>
+
+        <service id="project_blog.categories" class="Project\BlogBundle\Service\Categories">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <argument type="service" id="doctrine_cache.providers.service_connection_memcached_provider"/>
+        </service>
+
+        <service id="blog.twig.extension.side_menu" class="Project\BlogBundle\Twig\Extension\SideMenuExtension">
+            <argument type="service" id="project_blog.categories" />
+            <tag name="twig.extension" />
+        </service>
+    </services>
+</container>
+

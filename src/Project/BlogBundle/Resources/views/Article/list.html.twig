@@ -1,0 +1,17 @@
+{% extends 'ProjectBlogBundle::base.html.twig' %}
+{% block body %}
+    {% for article in pagination %}
+        <div class="hero-unit">
+                <h3>{{ article.title }}</h3>
+                <small>{{ article.createdAt|date('Y-m-d H:i:s') }}</small>
+                <div style="margin-bottom: 10px">{{ article.simpleContent }}</div>
+                <a class="btn btn-primary btn-large" href="{{ path('project_blog_view', {'id':article.id}) }}">
+                    Узнать больше
+                </a>
+        </div>
+    {% endfor %}
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination,'ProjectBlogBundle::pagination.html.twig') }}
+    </div>
+{% endblock %}
